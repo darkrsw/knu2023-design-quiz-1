@@ -1,4 +1,4 @@
-Quiz #1: Identify class hierarchy as a forest
+# Quiz #1: Identify class hierarchy as a forest
 
 Your submission must satisfy the following requirements:
 
@@ -10,6 +10,7 @@ Your submission must satisfy the following requirements:
 * R6. Assume that there are nested classes/methods and anonymous classes.
 * R7. Assume that there are nested directories in the input path.
 * R8. The function collect_class_forest(...) takes a path of a directory containing multiple python source code files, and produces a map of classes. The keys of the map are root classes that have no parent classes and have at least one child class. Each child class can have a set of children classes if the class has generalization relationships with other classes. If the class has no more children classes, an empty dictionary ({}) should be added at the end.
+* R9. Assume that there is no multiple inheritance between classes.
 
 
 ## Note:
