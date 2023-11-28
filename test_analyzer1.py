@@ -11,7 +11,7 @@ def test_class_forest():
         },
         "A": {
           "B": {},
-          "C": {}
+          "D": {}
         }
     }
 
