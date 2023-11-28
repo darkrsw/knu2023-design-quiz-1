@@ -2,7 +2,7 @@
 
 Your submission must satisfy the following requirements:
 
-* R1. Shall initialize your assignment repository from
+* R1. Shall initialize your assignment repository from https://classroom.github.com/a/ekLxqCqo
 * R2. Write your `app_analyzer.py` in the repository.
 * R3. Test your `app_analyzer.py` by using `pytest`.
 * R4. You need to let your TA know your repository URL and your student ID together via Slack.
