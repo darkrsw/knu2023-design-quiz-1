@@ -1,0 +1,86 @@
+# Configuration file for loki-sn-bot; copy this file to loki_sn_bot_config.py and update the
+# following:
+
+# auth token for the telegram bot; get this from @BotFather
+TELEGRAM_TOKEN = "FIXME"
+# If set, listen on this port on localhost, and tell Telegram to push notifications to us here (i.e.
+# typically over https URL). Both must be set, otherwise polling will be used instead. Redirection
+# from the URL to the localhost port must be set up.
+TELEGRAM_WEBHOOK_PORT, TELEGRAM_WEBHOOK_URL = 22080, None
+
+# login token for the discord bot; see https://discordpy.readthedocs.io/en/rewrite/discord.html
+DISCORD_TOKEN = "FIXME"
+
+# Postgresql database connection info; see database.pgsql for the SQL to create the needed tables
+PGSQL_CONNECT = { 'dbname': 'lokisnbot' }
+
+MAINNET_WALLET_ANY = (
+        '^L[4-9A-E][1-9A-HJ-NP-Za-km-z]{93}$', # main addr
+        '^L[E-HJ-NPQ][1-9A-HJ-NP-Za-km-z]{104}$', # integrated
+        '^L[Q-Za][1-9A-HJ-NP-Za-km-z]{93}$') # subaddress
+MAINNET_WALLET = MAINNET_WALLET_ANY[0]
+
+
+TESTNET_WALLET_ANY = (
+        '^T[6-9A-G][1-9A-HJ-NP-Za-km-z]{95}$', # main addr
+        '^T[GHJ-NP-R][1-9A-HJ-NP-Za-km-z]{106}$', # integrated
+        '^T[R-Zab][1-9A-HJ-NP-Za-km-z]{95}$') # subaddress
+TESTNET_WALLET = TESTNET_WALLET_ANY[0]
+
+# The length and patterns for a wallet prefix.  Both the length and the regex much match for the bot
+# to accept the wallet as a wallet prefix for contribution identification/SN finding (so the regexes
+# here are allowed to under-match).
+PARTIAL_WALLET_MIN_LENGTH = 8
+PARTIAL_WALLET_MAINNET = '^L[4-9A-E][1-9A-HJ-NP-Za-km-z]{0,93}'
+PARTIAL_WALLET_TESTNET = '^T[6-9A-G][1-9A-HJ-NP-Za-km-z]{0,95}'
+
+# URL to a loki node's RPC interface.  Should not end in a /.
+NODE_URL = 'http://localhost:22023'
+
+# If set to a URL, the bot can also report about the testnet (if you want *only* testnet, use the
+# plain NODE_URL setting instead).  To disable, set to None.
+TESTNET_NODE_URL = None
+#TESTNET_NODE_URL = 'http://localhost:38157'
+
+# If set to a testnet wallet RPC URL for a wallet containing testnet coins the bot can function as a
+# testnet faucet:
+TESTNET_WALLET_URL = None
+#TESTNET_WALLET_URL = 'http://localhost:12345'
+
+# How much to send users who request from the faucet.  Can be requested once/24h.  (Only applies if
+# TESTNET_WALLET_URL is set).  The value is in atomic units.
+TESTNET_FAUCET_AMOUNT = 202000000000
+
+# The amount of time (in seconds) the same user has to wait before using the faucet again
+TESTNET_FAUCET_WAIT_USER = 60*60
+# The amount of time (in seconds) anyone has to wait between using the faucet again (to prevent
+# multi-user faucet spamming)
+TESTNET_FAUCET_WAIT_GLOBAL = 60
+
+# domain name of the block explorer
+EXPLORER = 'oxen.observer'
+# domain name of the testnet block explorer
+TESTNET_EXPLORER = 'testnet.oxen.observer'
+
+# Thresholds, in hours, at which to notify about an impending expiry.  These must be in increasing
+# order.
+EXPIRY_THRESHOLDS = [6, 24, 48]
+TESTNET_EXPIRY_THRESHOLDS = [0.5, 2]
+
+LATEST_VERSION = [6,1,1]  # Show upgrade icon if less than this
+WARN_VERSION_LESS_THAN = [3,0,0]  # Sending warning messages if less than this
+WARN_VERSION_MSG = ' ⚠ [3.0.0 upgrade required](https://github.com/loki-project/loki/releases)'
+
+# Telegram handle of the bot's owner.  This gets used in the bot's welcome message.  If set to None
+# or '' it will not be shown.
+TELEGRAM_OWNER = 'FIXME'
+
+# Discord tag of the bot's owner
+DISCORD_OWNER = 'FIXME'
+
+# Extra information to include in the main menu/start message.  Set to None or '' to omit:
+EXTRA = 'This bot is free software available under a GPLv3+ license at: https://github.com/jagerman/loki-sn-bot\n\n'
+
+# Can be set to enable a donation menu with a wallet address + QR code image filename to upload
+DONATION_ADDR = None
+DONATION_IMAGE = None

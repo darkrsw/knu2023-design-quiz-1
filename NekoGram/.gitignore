@@ -1,0 +1,13 @@
+.env
+__pycache__/
+.idea/
+old/
+run.py
+Pipfile
+Pipfile.lock
+.DS_Store
+.pytest_cache/
+venv/
+test.py
+*.db
+*.sqlite
