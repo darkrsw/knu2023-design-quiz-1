@@ -1,8 +1,8 @@
 from answer import collect_class_forest
 
-input_one = "./loki-sn-bot/lokisnbot"
-input_two = "./Commpy/Commpy"
-intput_three = "./NekoGram/NekoGram"
+input_one = "./loki-sn-bot/lokisnbot/"
+input_two = "./Commpy/Commpy/"
+intput_three = "./NekoGram/NekoGram/"
 input_four = "./portfolio-management-project/models"
 
 def test_one():
