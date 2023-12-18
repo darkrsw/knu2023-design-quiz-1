@@ -4,6 +4,7 @@ input_one = "./loki-sn-bot/lokisnbot/"
 input_two = "./Commpy/Commpy/"
 intput_three = "./NekoGram/NekoGram/"
 input_four = "./portfolio-management-project/models"
+input_five = "./GraphTheory/"
 
 def test_one():
     expected = {'NetworkContext': {'TelegramContext': {}, 'DiscordContext': {}}, 'Network': {'TelegramNetwork': {}, 'DiscordNetwork': {}}}
@@ -29,4 +30,8 @@ def test_four():
     assert expected == student_answer
     print(student_answer)
 
-
+def test_five():
+    expected = {'Path': {'Walk': {'Cycle': {}}}, 'Bipartite': {'Connectivity': {}, 'GraphColor': {}}}
+    student_answer = collect_class_forest(input_five)
+    assert expected == student_answer
+    print(student_answer)
